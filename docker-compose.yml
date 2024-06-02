@@ -12,6 +12,8 @@ services:
     env_file:
       - ./.env.dev
     command: python3 manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
   
 
   db:
