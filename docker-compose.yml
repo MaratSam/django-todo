@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  app:
+    image: todo_app:1.0
+    container_name: todoapp_container
+    build: .
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+    command: python3 manage.py runserver 0.0.0.0:8000
+  
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=marat
+      - POSTGRES_PASSWORD=maratmarat
+      - POSTGRES_DB=django_dev
+
+#To persist the data beyond the life of the container
+volumes:
+  postgres_data:
