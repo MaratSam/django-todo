@@ -1,9 +1,9 @@
-version: '3.9'
 
 services:
   app:
     image: todo_app:1.0
     container_name: todoapp_container
+    # 'build .' is used to build an image from a Dockerfile located locally, in my directory
     build: .
     volumes:
       - .:/usr/src/app/

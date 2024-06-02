@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 # prevents Python to write .pyc files, actual in the container 
 ENV PYTHONDONTWRITEBYTECODE 1 
 
-ENV PATH "$PATH:/new/path:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ENV PATH "$PATH:/new/path:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/postgresql/:/var/lib/postgresql/data/"
 
 # Set the working directory
 WORKDIR  /djangoapp
